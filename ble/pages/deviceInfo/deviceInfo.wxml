@@ -1,0 +1,106 @@
+<!-- 导航栏 -->
+<t-navbar class="nav-wrap" title="{{ deviceName }}" left-arrow />
+
+<view class="div">
+  <!-- 1.SSID -->
+  <view class="line_view">
+    <text>SSID</text>
+    <input class="input-class" value="{{SSID}}" bindblur="handleSsidChange" />
+  </view>
+
+  <!-- 2.PASSWORD -->
+  <!-- <text>密码</text> -->
+  <view class='parentstyle '>
+    <view class='centerStyle'>
+      <input password='{{passwordType}}' value="{{PASSWORD}}" maxlength="20" style='font-size:34rpx' bindblur="handlePasswordChange"></input>
+      <image src='{{defaultType? "/img/closeeye.png": "/img/openeye.png"}}' class='imageStyle' bindtap='eyeStatus'></image>
+    </view>
+  </view>
+
+  <!-- 3.MAC -->
+  <view class="line_view">
+    <text>MAC</text>
+    <input class="input-class" value="{{MAC}}" disabled="true" />
+  </view>
+
+  <!-- 4.SCAN -->
+  <my_select class="select" title="SCAN" nowId="{{curId_SCAN}}" nameList="{{SCANs}}" nowName="{{curSCAN}}" placeholder="请选择SCAN">
+  </my_select>
+
+  <!-- 5.DHCP -->
+  <my_select class="select" title="DHCP" nowId="{{curId_DHCP}}" nameList="{{DHCPs}}" nowName="{{curDHCP}}" placeholder="请选择DHCP" bind:handleChange="changeDHCP">
+  </my_select>
+
+  <!-- 6.IP -->
+  <view class="line_view">
+    <text>IP地址</text>
+    <input class="input-class" value="{{IP}}" bindblur="handleIpChange" />
+  </view>
+
+  <!-- 7.SUBNET -->
+  <view class="line_view">
+    <text>子网掩码</text>
+    <input class="input-class" value="{{SUBNET}}" bindblur="handleSubnetChange" />
+  </view>
+
+  <!-- 8.GATEWAY -->
+  <view class="line_view">
+    <text>网关</text>
+    <input class="input-class" value="{{GATEWAY}}" bindblur="handleGatewayChange" />
+  </view>
+
+  <!-- 9.RSSI -->
+  <view class="line_view">
+    <text>RSSI</text>
+    <input class="input-class" value="{{RSSI}}" disabled="true" bindblur="handleRssiChange" />
+  </view>
+
+  <!-- PORT -->
+  <view class="line_view">
+    <text>PORT</text>
+    <input class="input-class" value="{{PORT}}" bindblur="handlePortChange" />
+  </view>
+
+  <!-- 11.TCP -->
+  <radio-group bindchange="changeTCP">
+    <radio color="red" value="Client" checked="true"> TCP Client</radio>
+    <radio color="red" value="Server"> TCP Server</radio>
+  </radio-group>
+  <!-- 14.SPORT -->
+  <view class="line_view" wx:if="{{isTcpClient}}">
+    <text>Server端口</text>
+    <input class="input-class" value="{{SPORT}}" bindblur="handleSportChange" />
+  </view>
+  <!-- 12.HOST -->
+  <view class="line_view" wx:if="{{isTcpServer}}">
+    <text>HOST地址</text>
+    <input class="input-class" value="{{HOST}}" bindblur="handleHostChange" />
+  </view>
+  <!-- 13.EPORT -->
+  <view class="line_view" wx:if="{{isTcpServer}}">
+    <text>Host端口</text>
+    <input class="input-class" value="{{EPORT}}" bindblur="handleEportChange" />
+  </view>
+  <!-- 10.BAUD -->
+  <view class="line_view">
+    <text>串口波特率</text>
+    <input class="input-class" value="{{BAUD}}" bindblur="handleBaudChange" />
+  </view>
+
+</view>
+
+<view class="btn">
+  <button class="saveChanges" bind:tap="saveChanges">保存更改</button>
+  <button class="send" bind:tap="clicked" style="background-color: {{bgColor}};">{{sendBtnText}}</button>
+  <button class="refreshInfo" bind:tap="refreshInfo">刷 新</button>
+</view>
+
+<hover-ball></hover-ball>
+
+<view class="tab-bar">
+  <view class="tab-bar-border"></view>
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <image src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+    <view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</view>
+  </view>
+</view>

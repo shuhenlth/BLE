@@ -1,0 +1,93 @@
+.isConnected{
+  text-align: center;
+   color: green;
+   margin-top: 25rpx;
+   font-weight: bold;
+}
+
+.isNotConnected{
+  text-align: center;
+   color: red;
+   margin-top: 25rpx;
+   font-weight: bold;
+}
+
+.top_btns{
+  display: flex;
+  justify-content: center;
+}
+.command1_btn {
+  font-size: 28rpx;
+  background-color: rgb(102, 169, 231);
+  margin: 25rpx 150rpx 0rpx 0rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  color: white;
+}
+
+.command2_btn {
+  font-size: 28rpx;
+  background-color: rgb(102, 169, 231);
+  margin: 25rpx 0rpx 0rpx 150rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  color: white;
+}
+.clear{
+  color: #ffffff;
+  background-color: rgb(88, 190,107);
+  line-height: 65rpx;
+  font-size: 28rpx;
+  float: right;
+  margin-left: 100rpx;
+}
+/* margin上右下左 */
+.top{
+  display: flex;
+  margin: 25rpx 35rpx 0rpx 35rpx;
+}
+.checkbox_roll{
+  float: right;
+  margin-right: 20rpx;
+}
+.checkbox_Hex_receive{
+  float: right;
+}
+.receive{
+  height: 500rpx;
+  background-color: rgb(246,246,246);
+}
+.bottom{
+  display: flex;
+  margin: 25rpx 35rpx 0rpx 35rpx;
+}
+.bottom input{
+  width: 100rpx;
+  margin-right: 20rpx;
+  background-color:rgb(246,246,246);
+}
+.bottom .clear{
+  margin-left: 20rpx;
+}
+.send{
+  margin: 25rpx 35rpx 0rpx 35rpx;
+  height: 200rpx;
+  background-color: rgb(246,246,246);
+}
+.send textarea{
+ height: 200rpx;
+}
+.btn_send{
+  color: #ffffff;
+  background-color: rgb(88, 190,107);
+  margin: 25rpx 35rpx 0rpx 35rpx;
+}
+.disconnect_btn{
+  margin: 25rpx 35rpx 0rpx 35rpx;
+}
+/* 文本过长自动换行 */
+.data_receive{
+  word-break: keep-all;
+  word-wrap: break-word;
+  white-space: pre-line;
+}

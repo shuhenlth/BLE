@@ -1,0 +1,28 @@
+<view class="select_all_view">
+  <!-- 内容说明，可以没有 -->
+  <view class="select_title" wx:if="{{title}}">{{title}}</view>
+  <view class="select_view">
+    <!-- 输入框 -->
+    <view class="inputPlaceholder" bindtap="startChange">
+      <text wx:if='{{select}}' style="font-weight: bolder;">{{select}}</text>
+      <text wx:else="{{select}}">{{placeholder}}</text>
+      <view class="jiantou1" wx:if='{{changable}}'>
+        <l-icon name="down" size="30" />
+      </view>
+      <view class="pull_down" wx:else='{{changable}}'>
+        <image src="/img/pulldown.png" style="height: 50rpx;width: 50rpx;" />
+      </view>
+    </view>
+    <!-- 下拉展开后的可选择内容 -->
+    <view class="content" wx:if='{{changable}}'>
+      <view class="{{item.id==selectId ? 'active':''}}" wx:for="{{selectcontent}}" wx:key="idnex" bindtap="changecontent" data-datavalue="{{item}}">
+        <view class="item">
+          {{item.name}}
+          <image class="selectedItem" src="/img/选中.png" wx:if="{{item.id==selectId}}" />
+        </view>
+        <!-- 分割线 -->
+        <view class="divLine"></view>
+      </view>
+    </view>
+  </view>
+</view>

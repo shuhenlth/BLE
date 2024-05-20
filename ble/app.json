@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/deviceList/index",
+    "pages/uuidList/index",
+    "pages/device1/device1",
+    "pages/device2/device2",
+    "pages/comm/index"
+  ],
+  "usingComponents": {},
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/deviceList/index",
+        "text": "蓝牙",
+        "iconPath": "/img/iconPath1.png",
+        "selectedIconPath": "/img/selectedIconPath1.png"
+      },
+      {
+        "pagePath": "pages/device1/device1",
+        "text": "常用设备1",
+        "iconPath": "/img/iconPath2.png",
+        "selectedIconPath": "/img/selectedIconPath2.png"
+      },
+      {
+        "pagePath": "pages/device2/device2",
+        "text": "常用设备2",
+        "iconPath": "/img/iconPath3.png",
+        "selectedIconPath": "/img/selectedIconPath3.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0052d9",
+    "navigationBarTitleText": "HCBLE串口助手",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "resolveAlias": {
+    "@configs/*": "configs/*",
+    "@utils/*": "utils/*",
+    "@libs/*": "libs/*"
+  }
+}

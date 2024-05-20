@@ -1,0 +1,7 @@
+<view id="modal" animation="{{animationModal}}" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 150rpx;right: 30rpx;border-radius:40rpx;opacity: 0;background:#000" bindtap="closeAnimate">
+</view>
+<image id="setDevice1" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 150rpx;right: 30rpx;opacity: 0;" src="/img/常用设备.png" animation="{{animationSetDevice1}}" bindtap="contact" bindtap="setDevice1"></image>
+<image id="setDevice2" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 150rpx;right: 30rpx;opacity: 0;" src="/img/常用设备.png" animation="{{animationSetDevice2}}" bindtap="setDevice2"></image>
+<image id="setCommand1" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 150rpx;right: 30rpx;opacity: 0;" src="/img/指令推送.png" animation="{{animationSetCommand1}}" bindtap="goCommand1" bind:longpress="setCommand1"></image>
+<image id="setCommand2" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 150rpx;right: 30rpx;opacity: 0;" src="/img/指令推送.png" animation="{{animationSetCommand2}}" bindtap="goCommand2" bind:longpress="setCommand2"></image>
+<image style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 150rpx;right: 30rpx;" src="/img/悬浮球.png" bindtap="contorlAnimate"></image>
